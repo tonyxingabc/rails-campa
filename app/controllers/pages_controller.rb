@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
   def home
-    raise
+    @vans = Van.all.sample(10)
   end
 end
