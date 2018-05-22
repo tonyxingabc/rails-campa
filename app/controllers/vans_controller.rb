@@ -2,20 +2,25 @@ class VansController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
+    @vans = policy_scope(Van).all
+    # .where(location: params[:location])
     @location = params[:location]
     @vans = Van.where(location: @location)
   end
 
   def show
     @van = Van.find(params[:id])
+    authorize @van
   end
 
   def new
     @van = Van.new
+    authorize @van
   end
 
   def create
     @van = Van.create(van_params)
+    authorize @van
     @van.owner = current_user
     if @van.save
       redirect_to van_path(@van)
@@ -26,6 +31,7 @@ class VansController < ApplicationController
 
   def edit
     @van = Van.find(params[:id])
+    authorize @van
   end
 
   def update
@@ -40,6 +46,7 @@ class VansController < ApplicationController
 
   def destroy
     @van = Van.find(params[:id])
+    authorize @van
     @van.destroy
     redirect_to pages_profile_path
   end
