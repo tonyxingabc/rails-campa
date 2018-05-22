@@ -10,10 +10,11 @@
   <%= van.cost_per_night %>
 </p>
 <%= link_to "Edit", edit_van_path(van) %>
+<%= link_to "Delete", van_path(van), method: :delete %>
 
 <%end %>
 
-
+<%= link_to "Create a new van", new_van_path %>
 
 
 <h2>My Bookings</h2>
