@@ -1,6 +1,9 @@
 class VansController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+
   def index
-    @vans = Van.where(location: params[:location])
+    @location = params[:location]
+    @vans = Van.where(location: @location)
   end
 
   def show
@@ -38,7 +41,7 @@ class VansController < ApplicationController
   def destroy
     @van = Van.find(params[:id])
     @van.destroy
-    redirect_to vans_path
+    redirect_to pages_profile_path
   end
 
   private

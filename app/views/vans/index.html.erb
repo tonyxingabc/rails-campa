@@ -1,7 +1,8 @@
-<h1>All my vans</h1>
-<% @vans.each do |van| %>
-  <%= link_to van.description, van_path(van)%>
-  <%= van.owner.name %>
-  <%= van.cost_per_night %>
-  <%= link_to "delete", van_path(van), method:'delete' %>
+<h1>Vans in <%= @location %></h1>
+<ul>
+  <% @vans.each do |van| %>
+  <li><%= link_to van.description, van_path(van)%></li>
 <% end %>
+</ul>
+
+<%= link_to "Back", root_path %>
