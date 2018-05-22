@@ -1,0 +1,9 @@
+<h1>This is the van list filtered by city</h1>
+<% @vans.each do |van| %>
+<p>
+  <%= link_to van.description, van_path(van)%>
+</p>
+<p>
+  <%= van.cost_per_night %>
+</p>
+<% end %>
