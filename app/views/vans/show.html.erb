@@ -1,11 +1,16 @@
-<h1>This is the show page for the van</h1>
+<h1>Selected Van</h1>
 
-<%= @van.description %>
-<%= @van.owner.name %>
-<%= @van.cost_per_night%>
-<%= @van.beds%>
+<ul>
+  <li>Name: <%= @van.description %></li>
+  <li>Owner: <%= @van.owner.name %></li>
+  <li>Cost per night:  <%= @van.cost_per_night%></li>
+  <li>Locaion: <%= @van.location %></li>
+</ul>
 
 
 
 
-<%= link_to "edit your van", edit_van_path, class: "navbar-wagon-item navbar-wagon-link" %>
+<!-- create booking, and sign in or log in  -->
+<%= link_to "BOOK", new_van_booking_path(@van)  %>
+
+<%= link_to "Back", root_path %>
