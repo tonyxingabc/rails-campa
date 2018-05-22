@@ -1,4 +1,11 @@
 <h1>This is the show page for the van</h1>
+
 <%= @van.description %>
+<%= @van.owner.name %>
 <%= @van.cost_per_night%>
 <%= @van.beds%>
+
+
+
+
+<%= link_to "edit your van", edit_van_path, class: "navbar-wagon-item navbar-wagon-link" %>
