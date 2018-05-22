@@ -1,6 +1,6 @@
 class VansController < ApplicationController
   def index
-    @vans = Van.all
+    @vans = Van.where(location: params[:location])
   end
 
   def show
