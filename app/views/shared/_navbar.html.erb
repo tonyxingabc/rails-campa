@@ -10,7 +10,6 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= current_user.username %>
       <%= link_to "List a van", new_van_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "SIGN OUT", destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link", method: "delete" %>
 
@@ -58,4 +57,3 @@
     </div>
   </div>
 </div>
-
