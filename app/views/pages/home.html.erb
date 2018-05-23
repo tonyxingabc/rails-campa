@@ -1,13 +1,37 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
 <h1> This is the home page</h1>
-<% @vans.each do |van| %>
-<p>
-  <%= link_to van.description, van_path(van)%>
-</p>
-<p>
-  <%= van.cost_per_night %>
-</p>
+<h2>Existing Vans</h2>
 
-<% end %>
+<ul>
+  <% @vans.each do |van| %>
+  <li><%= link_to van.description, van_path(van)%></li>
+  <% end %>
+</ul>
+
+
+<form action="/vans" method='get'>
+  <input type="text" name='location', placeholder="City">
+  <div class="input-group input-daterange">
+    <label for="from">From</label>
+    <input type="text" id="from" name="from">
+    <label for="to">to</label>
+    <input type="text" id="to" name="to">
+  </div>
+  <input type="submit" value='Search'>
+</form>
+
+
+<!-- Latest compiled and minified CSS -->
+
+<!--   <script>
+    $(document).on('turbolinks:load', function() {
+      $('#patient_date_of_birth_modal').datepicker({
+        format: 'yyyy-mm-dd'
+      }).on('hide', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+      });
+    });
+  </script>
+ -->
+
+<%= javascript_pack_tag 'datepicker' %>
