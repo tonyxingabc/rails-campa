@@ -4,11 +4,13 @@ class BookingsController < ApplicationController
   def new
     @van = Van.find(params[:van_id])
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
     @van = Van.find(params[:van_id])
     @booking = Booking.new(booking_params)
+    authorize @booking
     @booking.user = current_user
     @booking.van = @van
     if @booking.save
@@ -20,6 +22,7 @@ class BookingsController < ApplicationController
 
   def edit
     @booking = Booking.find(params[:id])
+    authorize @booking
   end
 
   def update
@@ -34,6 +37,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking = Booking.find(params[:id])
+    authorize @booking
     @booking.destroy
     redirect_to pages_profile_path
   end
