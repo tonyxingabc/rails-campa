@@ -2,17 +2,6 @@
 
 
 <h2>My vans</h2>
-<% @vans.each do |van| %>
-<p>
-  <%= link_to van.description, van_path(van)%>
-</p>
-<p>
-  <%= van.cost_per_night %>
-</p>
-<%= link_to "Edit", edit_van_path(van) %>
-<%= link_to "Delete", van_path(van), method: :delete %>
-
-
 <% @my_vans.each do |van| %>
   <li>Title: <%= link_to van.description, van_path(van)%></li>
   <li>Owner: <%= van.owner.name %> </li>
