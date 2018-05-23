@@ -2,6 +2,7 @@
 
 
 <h2>My vans</h2>
+
 <% @my_vans.each do |van| %>
   <li>Title: <%= link_to van.description, van_path(van)%></li>
   <li>Owner: <%= van.owner.name %> </li>
@@ -25,6 +26,3 @@
   <li><%= link_to "Edit my booking", edit_booking_path(booking) %></li>
   <li><%= link_to "Delete my booking", booking_path(booking), method: 'delete', data: {confirm: "Are you sure?"} %></li>
 <%end %>
-
-
-<%= link_to "Make a booking", root_path %>

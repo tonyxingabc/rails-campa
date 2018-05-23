@@ -6,17 +6,13 @@ class VanPolicy < ApplicationPolicy
     end
   end
 
-  def new?
-    return true
-  end
-
-  def create?
-    return true
-  end
-
   # Define policies here
   def edit?
     record.user == user
+  end
+
+  def update?
+    edit?
   end
 
   def destroy?
