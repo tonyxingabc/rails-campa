@@ -11,12 +11,16 @@ gem 'redis'
 gem 'pundit'
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
+gem 'carrierwave', '~> 1.2'
+gem 'cloudinary'
 gem 'font-awesome-sass', '~> 5.0.9'
+gem "geocoder"
 gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
+gem 'bootstrap-datepicker-rails'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
