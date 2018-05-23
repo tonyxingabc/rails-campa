@@ -1,30 +1,38 @@
-<!-- Latest compiled and minified CSS -->
-<%= simple_form_for(@van) do |f| %>
+<div class="form-inputs">
+  <%= simple_form_for(@van) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-  <% if @van.errors.any? %>
-    <div class="errors-container">
-      <ul>
-        <% @van.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+  <div class="form-van">
+    <div class="col-xs-12">
+      <%= f.input :description, placeholder: "Describe your van.." %>
     </div>
-  <% end %>
-
-  <div class="form-inputs">
-    <%= f.input :description %>
-    <%= f.input :cost_per_night %>
-    <%= f.input :max_guest %>
-    <%= f.input :toilet %>
-    <%= f.input :beds %>
-    <%= f.input :address, input_html: { id: "van_address" } %>
-    <%= f.input :transmission_type, :collection => %w[Manual Automatic] %>
+    <div class="col-xs-12">
+      <%= f.input :address, input_html: { id: "van_address" } %>
+    </div>
+    <div class="col-xs-12">
+      <%= f.input :cost_per_night, placeholder: "Cost per night", label: "Price"%>
+    </div>
+    <div class="col-xs-6">
+      <%= f.input :max_guest, :collection => %w[1 2 3 4] %>
+    </div>
+    <div class="col-xs-6">
+      <%= f.input :beds, :collection => %w[1 2 3 4] %>
+    </div>
+    <div class="col-xs-12">
+      <%= f.input :toilet %>
+    </div>
+    <div class="col-xs-12">
+      <%= f.input :transmission_type, :collection => %w[Manual Automatic] %>
+    </div>
+    <div class="col-xs-12">
+      <div class="form-actions">
+        <%= f.button :submit, class: "btn btn-primary btn-van-creation" %>
+      </div>
+    </div>
+    <% end %>
 
   </div>
+</div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+
+
