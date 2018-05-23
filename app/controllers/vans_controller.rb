@@ -4,8 +4,15 @@ class VansController < ApplicationController
   def index
     @vans = policy_scope(Van).all
     # .where(location: params[:location])
-    @location = params[:location]
-    @vans = Van.where(location: @location)
+    @vans = Van.where.not(latitude: nil, longitude: nil)
+
+    @markers = @vans.map do |van|
+      {
+        lat: van.latitude,
+        lng: van.longitude,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }
+    end
   end
 
   def show

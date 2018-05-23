@@ -19,7 +19,9 @@
     <%= f.input :max_guest %>
     <%= f.input :toilet %>
     <%= f.input :beds %>
+    <%= f.input :address, input_html: { id: "van_address" } %>
     <%= f.input :transmission_type, :collection => %w[Manual Automatic] %>
+
   </div>
 
   <div class="form-actions">
