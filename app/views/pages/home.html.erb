@@ -1,5 +1,5 @@
-<h1> This is the home page</h1>
-<h2>Existing Vans</h2>
+<%= render 'shared/banner' %>
+<h1>Popular Vans</h1>
 
 <ul>
   <% @vans.each do |van| %>
@@ -8,16 +8,6 @@
 </ul>
 
 
-<form action="/vans" method='get'>
-  <input type="text" name='location', placeholder="City">
-  <div class="input-group input-daterange">
-    <label for="from">From</label>
-    <input type="text" id="from" name="from">
-    <label for="to">to</label>
-    <input type="text" id="to" name="to">
-  </div>
-  <input type="submit" value='Search'>
-</form>
 
 
 <!-- Latest compiled and minified CSS -->

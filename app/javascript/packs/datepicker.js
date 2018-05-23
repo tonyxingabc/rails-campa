@@ -1,8 +1,10 @@
 import $ from 'jquery'
 import { datepicker } from 'bootstrap-datepicker'
 
-$('#from').datepicker({
-});
+// $('#from').datepicker({
+// });
 
-$('#to').datepicker({
+// $('#to').datepicker({
+// });
+$('.input-daterange').datepicker({
 });
