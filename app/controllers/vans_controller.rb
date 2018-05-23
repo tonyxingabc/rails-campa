@@ -1,13 +1,13 @@
 class VansController < ApplicationController
-  def index
-    @vans = Van.all
-  end
+  # def index
+  #   @vans = Van.all
+  # end
 
-  def show
-    @van = Van.find(params[:id])
-  end
+  # def show
+  #   @van = Van.find(params[:id])
+  # end
 
-  def create
+  # def create
 
-  end
+  # end
 end
