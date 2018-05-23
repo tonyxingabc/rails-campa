@@ -7,6 +7,9 @@
       <%= f.input :description, placeholder: "Describe your van.." %>
     </div>
     <div class="col-xs-12">
+      <%= f.input :address, input_html: { id: "van_address" } %>
+    </div>
+    <div class="col-xs-12">
       <%= f.input :cost_per_night, placeholder: "Cost per night", label: "Price"%>
     </div>
     <div class="col-xs-6">
@@ -27,6 +30,7 @@
       </div>
     </div>
     <% end %>
+
   </div>
 </div>
 
