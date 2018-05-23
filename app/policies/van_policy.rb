@@ -12,7 +12,7 @@ class VanPolicy < ApplicationPolicy
   end
 
   def update?
-    edit?
+    true
   end
 
   def destroy?
