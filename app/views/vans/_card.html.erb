@@ -1,39 +1,21 @@
 <div class="card">
-  <div class="card-image-wrapper" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_url 'auto.jpeg' %>');">
+  <div class="card-image-wrapper">
     <div class="card-heart">
     <span class="fa fa-heart"></span>
     </div>
-    <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
   </div>
 
   <div class="card-detail-wrapper">
-    <div class="card-category"> <h4>CITY</h4>
-    </div>
-    <div class="card-description">
-      <h4>FRESHLY RESTORED VW T1 TO RENT OUT </h4>
+    <div class="card-category"> <h4><%= link_to van.description, van_path(van) %></h4>
     </div>
     <div class="card-symbol" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('<%= image_url 'camper.png' %>');">
   </div>
     <div class="card-information">
-      <h5>cost per day:    </h5>
-      <h5>max guests:      </h5>
-      <h5>transmission:    </h5>
+      <h5>cost per day:  <%= van.cost_per_night %>  </h5>
+      <h5>max guests: <%= van.beds %>   </h5>
+      <h5>transmission:  <%= van.transmission_type %>  </h5>
+      <h5>Owner:  <%= van.owner.name %>  </h5>
     </div>
-
-    <div class="card-rating">
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star"></span>
-      <span class="fa fa-star"></span>
-    </div>
-      <div class="number-rating"><h5>100 Ratings</h5></div>
 
   </div>
 </div>
-
-
-
-
-
-<!-- <a class="card-link" href="#" ></a> -->
