@@ -1,13 +1,26 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('/banner.jpg');">
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_url 'banner.jpg' %>');">
   <div class="banner-content">
     <form action="/vans" method='get'>
-      <input type="text" name='location', placeholder="City">
+        <div class="row">
+          <h2>Fill in your City</h2>
+              <div id="custom-search-input">
+                  <div class="input-group col-md-12">
+                      <input type="text" name="location" class="form-control input-lg" placeholder="City" />
+                      <span class="input-group-btn">
+                          <button class="btn btn-info btn-lg" type="button">
+                              <i class="glyphicon glyphicon-search"></i>
+                          </button>
+                      </span>
+                  </div>
+              </div>
+            </div>
       <div class="input-daterange input-group" id="datepicker">
         <input type="text" name="start" />
-        <span>to</span>
+        <span style="color:white">to</span>
         <input type="text" name="end" />
       </div>
-      <input type="submit" value='Search'>
+      <%= link_to "search", vans_path, class: "btn-landing btn-default"  %>
     </form>
   </div>
 </div>
+
