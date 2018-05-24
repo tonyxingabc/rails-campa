@@ -3,17 +3,18 @@ class BookingPolicy < ApplicationPolicy
     def resolve
       scope
     end
-
-    def edit?
-      raise
-    end
-
-    def update?
-      true
-    end
-
-    def destroy?
-      true
-    end
   end
+
+  def edit?
+    true
+  end
+
+  def update?
+    true
+  end
+
+  def destroy?
+    true
+  end
+
 end
