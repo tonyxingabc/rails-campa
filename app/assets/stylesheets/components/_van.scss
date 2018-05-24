@@ -1,14 +1,67 @@
-.listing-summary {
-
+.banner.show-page {
+  height: 50vh;
+  background-size: cover;
 }
 
+.owner-profile {
+  padding-top: 30px;
+  text-align: center;
+}
+
+.owner-profile-name {
+  margin-left:20px;
+}
+.vehicle-address{
+  margin-top: 40px;
+  margin-bottom: 16px;
+  text-align:left;
+}
 .vehicle-title {
-      color: blue;
-      margin-top: 40px;
-      margin-bottom: 16px;
-  }
+  margin-top: 40px;
+  margin-bottom: 16px;
+  text-align:left;
+}
 
 .listing-summary .summary-icons img {
-    width: 60px;
-    padding-bottom: 8px;
+  width: 60px;
+  padding-bottom: 8px;
+}
+
+.listing-summary .summary-icons {
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+}
+.about h2 {
+  text-align:left;
+}
+
+.listing h2 {
+    font-size: 22px;
+}
+.listing-pricing .pricing-summary-section {
+  background-color: #3c3f40;
+  background-color: rgba(60,63,64,.9);
+  border: 0;
+  color: #fff;
+  padding: 13px 20px 10px;
+  z-index: 1;
+}
+
+.listing-pricing-container {
+    position: relative;
+    margin-top: 20px;
+}
+
+.listing-pricing-container .listing-pricing {
+    position: absolute;
+    margin-top: -68px;
+    border: 1px solid #d3d3d3;
+}
+
+.listing-pricing .pricing-row {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #d3d3d3;
+  overflow: auto;
 }
