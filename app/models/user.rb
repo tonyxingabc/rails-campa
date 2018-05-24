@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many :vans, through: :bookings
   has_many :my_vans, class_name: 'Van'
+  mount_uploader :photo, PhotoUploader
 end
