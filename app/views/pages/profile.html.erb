@@ -1,31 +1,27 @@
 <h1>My Profile</h1>
 <h2>My vans</h2>
-
-  <%= link_to "Create a new van", new_van_path, class: "btn btn-primary" %>
+  <div class="link-buttons">
+    <%= link_to "Create a new van", new_van_path, class: "btn btn-primary" %>
+  </div>
+  <div class="profile-vans">
+    <% @my_vans.each do |van| %>
+      <div class="col-xs-12 col-md-4" >
+        <%= render 'vans/card', van: van %>
+      </div>
+      <%end %>
+  </div>
+<h2>My Bookings</h2>
 <div class="profile-vans">
-  <% @my_vans.each do |van| %>
-    <%= render 'vans/card', van: van %>
-<%end %>
+  <% @my_bookings.each do |booking| %>
+    <div class="col-xs-12 col-md-4" >
+      <p><%= booking.start_date %> - <%= booking.end_date %></p>
+      <%= render 'pages/bookings', van: booking.van %>
+    </div>
+    <%end %>
 </div>
 
 
-<h2>My Bookings</h2>
-<% @my_bookings.each do |booking| %>
-  <div class="message">
-    <div class="message-name">
-      <h3>Van: <%= link_to booking.van.description %></h3>
-      <p>Dates: <%= booking.start_date %> - <%= booking.end_date %></p>
-    </div>
-    <div class="message-body">
-      <p><strong>Owner: <%= booking.van.owner.name %></strong></p>
-      <p>
-        Cost: <%= booking.van.cost_per_night %> per night
-      </p>
-    </div>
-    <div class="message-status">
-      <p class="status pending"><%= link_to "Edit my booking", edit_van_booking_path(booking.van, booking) %></p>
-      <p class="price"><%= link_to "Delete my booking", booking_path(booking), method: 'delete', data: {confirm: "Are you sure?"} %></p>
-    </div>
-  </div>
-<%end %>
+
+
+
 

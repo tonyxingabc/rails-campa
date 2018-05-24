@@ -1,103 +1,39 @@
 .card {
-  background: white;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  height: 350px;
-  width: 250px;
-  bottom-margin: 10px;
-  margin-left:10px;
-  margin-right:10px;
-}
-.card:hover{
-  box-shadow: 1px 8px 20px grey;
-}
-.card-image-wrapper {
-  height: 150px;
-  background-size: cover;
-}
-
-.card-detail-wrapper {
-  width: 100%;
+  border: solid;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  color: white;
   position: relative;
-  height: 189px;
+}
+.card-image {
+  height: 200px;
+  background-size: cover !important;
+  background-position: center;
 }
 
-.card-user {
-  position: absolute;
-  left: 220px;
-  bottom: 308px;
-  width: 40px;
-  border-radius: 50%;
-}
-
-.card-category {
-  text-transform: uppercase;
-  font-size: 15px;
-  text-align: center;
-  color: light-gray;
-}
-
-.card-information {
-  text-transform: lowercase;
-  color: light-gray;
-  position: absolute;
-  left: 20px;
-  top: 60px;
-}
-
-.card-rating {
-  color: light-gray;
-  position: absolute;
-  left: 10px;
-  bottom: 20px;
-}
-
-.number-rating {
-  position: absolute;
-  bottom: 0px;
-  left: 10px;
-}
-
-.card-symbol {
-  width: 22px;
-  height: 20px;
-  position: absolute;
-  bottom: 25px;
-  right: 20px;
-  background-size: cover;
-}
-
-// .card-link {
-//   position: absolute;
-//   top: 0;
-//   bottom: 0;
-//   right: 0;
-//   width: 100%;
-//   z-index: 2;
-//   background: black;
-//   opacity: 0;
-
-// }
 .card-description {
-  font-size: 10px;
-
+  bottom: 10px;
+  margin-left: 10px;
 }
 
-.card-heart {
-  width: 22px;
-  height: 20px;
-  position: relative;
-  left: 10px;
-  background-size: cover;
-  color: #fc5b62;
-}
-.card-heart:hover{
-  opacity: 5;
+.card-description h2 {
+  font-size: 24px;
+  text-align: left;
 }
 
+.card-description p {
+  font-size: 14px;
+  color: gray;
+  opacity: 0.7;
+  font-weight: lighter;
+}
 
-.checked {
-    color: orange;
+@media (min-width: 480px) {
+  .card {
+    width: 300px;
+  }
 }
-.profile-vans{
-  display: flex;
+
+.card:hover {
+  opacity: 0.8;
 }
+
