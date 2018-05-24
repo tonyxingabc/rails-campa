@@ -49,6 +49,8 @@ class VansController < ApplicationController
     else
       render :new
     end
+    authorize @van
+
   end
 
   def destroy
@@ -61,6 +63,6 @@ class VansController < ApplicationController
   private
 
   def van_params
-    params.require(:van).permit(:user, :description, :cost_per_night, :max_guest,:transmission_type, :toilet, :beds, :photo, :title)
+    params.require(:van).permit(:user, :description, :cost_per_night, :max_guest,:transmission_type, :toilet, :beds, :photo, :title, :address)
   end
 end

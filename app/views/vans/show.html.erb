@@ -1,22 +1,60 @@
+  <div class="banner show-page" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @van.photo,crop: :fill %>');"></div>
+  <div class="listing">
+    <div class="container">
+      <!-- SECTION -->
+      <div class="row">
+        <!-- The Vehicle Summary -->
+        <div class="col-md-8">
+          <div class="listing-summary">
+            <!-- avatar + vehicle title -->
+            <div class="section">
+              <div class="row">
+                <div class="col-md-10 col-sm-9">
+                  <h1 class="vehicle-title"><%= @van.title %></h1>
+                  <h4 class="vehicle-address"><i class="fa fa-map-marker"></i><%= @van.address %></h4>
+                </div>
+               <div class="owner-profile col-md-2 col-sm-3">
+                  <%= cl_image_tag @van.owner.photo, width: 80, height: 80, crop: :thumb, gravity: :face, class: "avatar" %>
+                  <span class="owner-profile-name"><%= @van.owner.name %></span>
+                </div>
+              </div>
+            </div>
 
-<div class="container">
-  <%= link_to "Back", root_path, class: "btn btn-primary" %>
-  <h1>Selected Van</h1>
-  <div class="left-box">
-    <div class="card-imager" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @van.photo, height: 300, width: 400, crop: :fill %>');">
-      <h6>Ferdinands Van</h6>
-    </div>
-    <ul>
-        <li>Title:<%= @van.title %></li>
-        <li>Name:<%= @van.description %></li>
-        <li>Owner: <%= @van.owner.name %></li>
-        <li>Cost: <%= @van.cost_per_night%></li>
-        <li>Location:<%= @van.location %></li>
-      </ul>
-    <div class="card-actions">
-      <%= link_to "Book", new_van_booking_path(@van), class: "btn btn-primary"  %>
-    </div>
+            <hr>
+            <!-- summary icons -->
+            <div class="section">
+              <div class="summary-icons">
+                <div class="row">
+                  <div class="col-xs-3">
+                    <img src="<%= image_url 'vehicle-summary-icon-user-red.png' %>">
+                    <p>Max Guests x2</p>
+                  </div>
+                  <div class="col-xs-3">
+                    <!-- <img src="/images/icon-mighway/vehicle-summary-icon-bed-red.png"> -->
+                    <p>Beds x2</p>
+                  </div>
+                  <div class="col-xs-3">
+                    <!-- <img src="/images/icon-mighway/vehicle-summary-icon-toilet-red.png"> -->
+                    <p>Toilet</p>
+                  </div>
+                  <div class="col-xs-3">
+                    <!-- <img src="/images/icon-mighway/vehicle-summary-icon-transmission-auto-red.png"> -->
+                    <p>Automatic</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>      </div>
 
-     <%= cl_image_tag @van.owner.photo, width: 150, height: 150, crop: :thumb, gravity: :face, class: "avatar" %>
+      </div>
+      <!-- SECTION -->
+
+    </div>
   </div>
-</div>
+
+
+
+
+
+<%= link_to "edit", edit_van_path(@van) %>
+<%= link_to "delete van",van_path(@van), method:'delete', data: {confirm: "Are you sure?"} %>
