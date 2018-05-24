@@ -1,28 +1,18 @@
-<h1>Selected Van</h1>
-
-
 <div class="container">
+  <%= link_to "Back", root_path, class: "btn btn-primary" %>
+  <h1>Selected Van</h1>
   <div class="left-box">
-  <div class="card-imager" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_url 'auto.jpeg' %>');">
-  <div class="owner-detail"> <h3>Ferdinands Van</h3></div>
-   <div class="list-name"><h4>Name:</h4><%= @van.description %> </div>
-  <div class= "list-owner"><h4>Owner:</h4> <%= @van.owner.name %></div>
-  <div class= "list-cost"><h4>Cost:</h4>  <%= @van.cost_per_night%></div>
-  <div class= "list-location"><h4>Location:</h4> <%= @van.location %></div>
-   </div>
-   <div class="right-topbox">
-
+    <div class="card-imager" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_url 'auto.jpeg' %>');">
+      <h6>Ferdinands Van</h6>
+    </div>
+    <ul>
+        <li>Name:<%= @van.description %></li>
+        <li>Owner: <%= @van.owner.name %></li>
+        <li>Cost: <%= @van.cost_per_night%></li>
+        <li>Location:<%= @van.location %></li>
+      </ul>
+    <div class="card-actions">
+      <%= link_to "Book", new_van_booking_path(@van), class: "btn btn-primary"  %>
+    </div>
   </div>
-  <div class="right-bottombox">
-
-  </div>
-
 </div>
-
-
-
-<!-- create booking, and sign in or log in  -->
-<%= link_to "Book", new_van_booking_path(@van)  %>
-
-<%= link_to "Back", root_path %>
-

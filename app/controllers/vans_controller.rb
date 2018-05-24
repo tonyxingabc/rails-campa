@@ -2,8 +2,8 @@ class VansController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @vans = policy_scope(Van).all
-    # .where(location: params[:location])
+    @vans = policy_scope(Van)
+
     @vans = Van.where.not(latitude: nil, longitude: nil)
 
     @markers = @vans.map do |van|

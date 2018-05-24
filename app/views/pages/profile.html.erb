@@ -1,28 +1,37 @@
 <h1>My Profile</h1>
 
-
 <h2>My vans</h2>
 
-<% @my_vans.each do |van| %>
-  <li>Title: <%= link_to van.description, van_path(van)%></li>
-  <li>Owner: <%= van.owner.name %> </li>
-  <li>Cost: <%= van.cost_per_night %> per night</li>
-  <li><%= link_to "Edit my van", edit_van_path(van) %></li>
-  <li><%= link_to "Delete my van", van_path(van), method: 'delete', data: {confirm: "Are you sure?"} %></li>
-<%end %>
+<%= link_to "Create a new van", new_van_path, class: "btn btn-primary" %>
+<br>
+<br>
 
-<%= link_to "Create a new van", new_van_path %>
+<% @my_vans.each do |van| %>
+  <%= render 'vans/card', van: van %>
+<%end %>
 
 
 <h2>My Bookings</h2>
 <% @my_bookings.each do |booking| %>
-  <li>Title: <%= link_to booking.van.description %></li>
-  <li>Owner: <%= booking.van.owner.name %> </li>
-  <li>Cost: <%= booking.van.cost_per_night %> per night</li>
-  <li>Start: <%= booking.start_date %></li>
-  <li>End: <%= booking.end_date %></li>
-  <li>Days: <%= (booking.end_date - booking.start_date).to_i %></li>
-  <li>Cost: <%= (booking.end_date - booking.start_date).to_i * booking.van.cost_per_night %></li>
-  <li><%= link_to "Edit my booking", edit_booking_path(booking) %></li>
-  <li><%= link_to "Delete my booking", booking_path(booking), method: 'delete', data: {confirm: "Are you sure?"} %></li>
+  <div class="message">
+    <div class="message-name">
+      <h3>Van: <%= link_to booking.van.description %></h3>
+      <p>Dates: <%= booking.start_date %> - <%= booking.end_date %></p>
+    </div>
+    <div class="message-body">
+      <p><strong>Owner: <%= booking.van.owner.name %></strong></p>
+      <p>
+        Cost: <%= booking.van.cost_per_night %> per night
+      </p>
+    </div>
+    <div class="message-status">
+      <p class="status pending"><%= link_to "Edit my booking", edit_van_booking_path(booking.van, booking) %></p>
+      <p class="price"><%= link_to "Delete my booking", booking_path(booking), method: 'delete', data: {confirm: "Are you sure?"} %></p>
+    </div>
+  </div>
+
+
+
+
 <%end %>
+

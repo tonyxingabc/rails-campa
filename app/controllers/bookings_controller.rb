@@ -22,6 +22,7 @@ class BookingsController < ApplicationController
 
   def edit
     @booking = Booking.find(params[:id])
+    @van = @booking.van
     authorize @booking
   end
 
