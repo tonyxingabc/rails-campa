@@ -61,6 +61,6 @@ class VansController < ApplicationController
   private
 
   def van_params
-    params.require(:van).permit(:user, :description, :cost_per_night, :max_guest,:transmission_type, :toilet, :beds)
+    params.require(:van).permit(:user, :description, :cost_per_night, :max_guest,:transmission_type, :toilet, :beds, :photo, :title)
   end
 end
