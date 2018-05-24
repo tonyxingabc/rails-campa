@@ -1,11 +1,13 @@
+
 <div class="container">
   <%= link_to "Back", root_path, class: "btn btn-primary" %>
   <h1>Selected Van</h1>
   <div class="left-box">
-    <div class="card-imager" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_url 'auto.jpeg' %>');">
+    <div class="card-imager" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @van.photo, height: 300, width: 400, crop: :fill %>');">
       <h6>Ferdinands Van</h6>
     </div>
     <ul>
+        <li>Title:<%= @van.title %></li>
         <li>Name:<%= @van.description %></li>
         <li>Owner: <%= @van.owner.name %></li>
         <li>Cost: <%= @van.cost_per_night%></li>
@@ -14,5 +16,7 @@
     <div class="card-actions">
       <%= link_to "Book", new_van_booking_path(@van), class: "btn btn-primary"  %>
     </div>
+
+     <%= cl_image_tag @van.owner.photo, width: 150, height: 150, crop: :thumb, gravity: :face, class: "avatar" %>
   </div>
 </div>

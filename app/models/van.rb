@@ -8,5 +8,5 @@ class Van < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
 
   validates :description, presence: true
-
+  mount_uploader :photo, PhotoUploader
 end

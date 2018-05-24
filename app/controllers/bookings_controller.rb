@@ -34,6 +34,7 @@ class BookingsController < ApplicationController
     else
       render :new
     end
+    authorize @booking
   end
 
   def destroy

@@ -4,6 +4,9 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
   <div class="form-van">
     <div class="col-xs-12">
+      <%= f.input :title, placeholder: "Give your Van a name.." %>
+    </div>
+    <div class="col-xs-12">
       <%= f.input :description, placeholder: "Describe your van.." %>
     </div>
     <div class="col-xs-12">
@@ -23,6 +26,10 @@
     </div>
     <div class="col-xs-12">
       <%= f.input :transmission_type, :collection => %w[Manual Automatic] %>
+    </div>
+    <div class="col-xs-12">
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
     </div>
     <div class="col-xs-12">
       <div class="form-actions">
