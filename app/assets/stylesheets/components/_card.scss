@@ -4,6 +4,8 @@
   height: 350px;
   width: 250px;
   bottom-margin: 10px;
+  margin-left:10px;
+  margin-right:10px;
 }
 .card:hover{
   box-shadow: 1px 8px 20px grey;
@@ -95,4 +97,7 @@
 
 .checked {
     color: orange;
+}
+.profile-vans{
+  display: flex;
 }

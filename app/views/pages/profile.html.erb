@@ -1,14 +1,12 @@
 <h1>My Profile</h1>
-
 <h2>My vans</h2>
 
-<%= link_to "Create a new van", new_van_path, class: "btn btn-primary" %>
-<br>
-<br>
-
-<% @my_vans.each do |van| %>
-  <%= render 'vans/card', van: van %>
+  <%= link_to "Create a new van", new_van_path, class: "btn btn-primary" %>
+<div class="profile-vans">
+  <% @my_vans.each do |van| %>
+    <%= render 'vans/card', van: van %>
 <%end %>
+</div>
 
 
 <h2>My Bookings</h2>
@@ -29,9 +27,5 @@
       <p class="price"><%= link_to "Delete my booking", booking_path(booking), method: 'delete', data: {confirm: "Are you sure?"} %></p>
     </div>
   </div>
-
-
-
-
 <%end %>
 

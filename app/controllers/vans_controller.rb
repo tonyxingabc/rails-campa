@@ -30,7 +30,7 @@ class VansController < ApplicationController
     authorize @van
     @van.owner = current_user
     if @van.save
-      redirect_to van_path(@van)
+      redirect_to pages_profile_path
     else
       render :new
     end

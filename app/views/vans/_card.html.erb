@@ -8,7 +8,7 @@
   <div class="card-detail-wrapper">
     <div class="card-category"> <h4><%= link_to van.description, van_path(van) %></h4>
     </div>
-    <div class="card-symbol" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('<%= image_url 'camper.png' %>');">
+    <div class="card-symbol" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @van.photo, height: 300, width: 400, crop: :fill %>');">
   </div>
     <div class="card-information">
       <h5>cost per day:  <%= van.cost_per_night %>  </h5>
@@ -16,6 +16,6 @@
       <h5>transmission:  <%= van.transmission_type %>  </h5>
       <h5>Owner:  <%= van.owner.name %>  </h5>
     </div>
-
   </div>
 </div>
+
