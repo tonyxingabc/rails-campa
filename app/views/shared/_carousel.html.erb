@@ -1,0 +1,13 @@
+<div class="content-home">
+  <div class="container">
+    <h2>TRAVEL, PEACE, LOVE AND TONY</h2>
+    <div class="row-home">
+      <% @vans.take(4).each do |van| %>
+        <div class="col-xs-12 col-sm-3">
+          <%= render 'card', van: van %>
+        </div>
+      <% end  %>
+
+    </div>
+  </div>
+
