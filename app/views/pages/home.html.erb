@@ -1,14 +1,7 @@
+
 <%= render 'shared/banner' %>
-<h1>Popular Vans</h1>
 
-<ul>
-  <% @vans.each do |van| %>
-  <li><%= link_to van.description, van_path(van)%></li>
-  <% end %>
-</ul>
-
-
-
+<%= render 'shared/carousel' %>
 
 <!-- Latest compiled and minified CSS -->
 

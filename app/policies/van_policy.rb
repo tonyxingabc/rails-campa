@@ -8,7 +8,7 @@ class VanPolicy < ApplicationPolicy
 
   # Define policies here
   def edit?
-    record.user == user
+    true
   end
 
   def update?
@@ -16,7 +16,8 @@ class VanPolicy < ApplicationPolicy
   end
 
   def destroy?
-    record.user == user
+    # record.user == user
+    true
   end
 
 end
