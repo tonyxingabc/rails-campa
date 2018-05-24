@@ -1,11 +1,16 @@
 <%= render 'shared/banner' %>
-<h1>Popular Vans</h1>
 
-<ul>
-  <% @vans.each do |van| %>
-  <li><%= link_to van.description, van_path(van)%></li>
-  <% end %>
-</ul>
+  <div class="container">
+    <div class="row">
+
+      <% @vans.each do |van| %>
+        <div class="col-xs-12 col-sm-4">
+          <%= render 'card', van: van %>
+        </div>
+      <% end  %>
+
+    </div>
+  </div>
 
 
 

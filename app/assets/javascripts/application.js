@@ -1,5 +1,3 @@
-//= require rails-ujs
-//= require_tree .
-//= require bootstrap-datepicker
-//= require bootstrap-datepicker/core
-
+import 'bootstrap';
+import { initUpdateNavbarOnScroll } from '../components/navbar';
+initUpdateNavbarOnScroll();
