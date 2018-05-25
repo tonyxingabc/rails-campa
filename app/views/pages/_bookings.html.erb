@@ -1,11 +1,11 @@
 <div class="card">
- <!-- <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%#= cl_image_path van.photo, crop: :fill %>');">
-  </div> -->
+ <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path van.photo, crop: :fill %>');">
+  </div>
   <div class="card-description">
         <h2><%= link_to van.title, van_path(van) %></h2>
-        <p>Cost per day:  <%= van.cost_per_night %></p>
-        <p>Max guests: <%= van.beds %></p>
-        <p>Transmission:  <%= van.transmission_type %></p>
+        <p>Start date:  <%= van.bookings[0].start_date %></p>
+        <p>End date: <%= van.bookings[0].end_date %></p>
+        <p>Total cost:  <%= van.bookings[0].cost %></p>
         <p>Owner: <%= van.owner.name %></p>
   </div>
 </div>

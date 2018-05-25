@@ -14,7 +14,6 @@
 <div class="profile-vans">
   <% @my_bookings.each do |booking| %>
     <div class="col-xs-12 col-md-4" >
-      <p><%= booking.start_date %> - <%= booking.end_date %></p>
       <%= render 'pages/bookings', van: booking.van %>
     </div>
     <%end %>
