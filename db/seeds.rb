@@ -16,6 +16,7 @@ u1 = User.create({email: "lito@gmail.com", password:"1111111", name: "Lito", use
 u2 = User.create({email: "tony@gmail.com", password:"1111111",name: "Tony", username: "tonyxingabc"})
 u3 = User.create({email: "ferdi@gmail.com", password:"1111111",name: "Ferdi", username: "ferdi"})
 
+
 v1 = Van.new(
   {user_id: u1.id, title: "Van 1", description: "The most beautiful van in the world", cost_per_night: 70, max_guest: 2, transmission_type: "manual", toilet: true, beds: 2, location: "Berlin", address: "Avenue Kamerdelle 28, Brüssel"}
   )
@@ -29,6 +30,7 @@ v2.save
 v3 = Van.create({user_id: u2.id, title: "Van 3", description: "The most ugly van in the world", cost_per_night: 20, max_guest: 2, transmission_type: "manual", toilet: false, beds: 2, location: "Auckland", address: "Implerstraße 12a, Munich"})
 v3.remote_photo_url = url1
 v3.save
+
 
 v4 = Van.new({user_id: u1.id, title: "Van 4", description: "The most ugly van in the world", cost_per_night: 20, max_guest: 2, transmission_type: "manual", toilet: false, beds: 2, location: "Auckland", address: "16 Villa Gaudelet, Paris"})
 v4.remote_photo_url = url2

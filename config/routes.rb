@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   resources :vans do
-    resources :bookings, only: [:create, :new, :edit, :update]
+    resources :bookings, only: [:create]
   end
 
-  resources :bookings, only: [:show, :destroy ]
+  resources :bookings, only: [:show, :edit, :update, :destroy]
 
   devise_for :users
   root to: 'pages#home'
