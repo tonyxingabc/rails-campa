@@ -4,9 +4,10 @@
     <div class="row-home">
       <% @vans.take(4).each do |van| %>
         <div class="col-xs-12 col-sm-3">
-          <%= render 'card', van: van %>
+          <%= render 'vans/card', van: van %>
         </div>
       <% end  %>
     </div>
   </div>
+</div>
 
