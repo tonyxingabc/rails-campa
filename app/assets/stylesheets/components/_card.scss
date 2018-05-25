@@ -1,39 +1,46 @@
 .card {
-  border: solid;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  color: white;
-  position: relative;
+ border: thin;
+ border-color: gray;
+ color: white;
+ position: relative;
+ background-color: white;
+ margin: 10px;
+ width: 250px;
 }
+
 .card-image {
-  height: 200px;
-  background-size: cover !important;
-  background-position: center;
+ height: 150px;
+ background-size: cover !important;
+ background-position: center;
 }
 
 .card-description {
-  bottom: 10px;
-  margin-left: 10px;
+ bottom: 10px;
+ margin-left: 4px;
+ background-size: cover;
 }
 
 .card-description h2 {
-  font-size: 24px;
-  text-align: left;
+ margin-top: 5px;
+ font-size: 24px;
+ text-align: center;
 }
 
 .card-description p {
-  font-size: 14px;
-  color: gray;
-  opacity: 0.7;
-  font-weight: lighter;
+ font-size: 14px;
+ color: gray;
+ opacity: 0.7;
+ font-weight: lighter;
+ margin: 5px;
 }
 
 @media (min-width: 480px) {
-  .card {
-    width: 300px;
-  }
+ .card {
+   width: 250px;
+ }
 }
 
 .card:hover {
-  opacity: 0.8;
+ opacity: 0.8;
 }
 

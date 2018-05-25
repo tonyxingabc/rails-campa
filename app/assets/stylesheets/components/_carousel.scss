@@ -1,14 +1,13 @@
-.row-home {
-  margin-top: 10px;
-}
 
-.content-home {
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
 
-.content-home h2 {
-  color: black;
+.home-container h3 {
+  font-color: black;
   font-weight: bold;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
+
+.home-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 40px;
 }

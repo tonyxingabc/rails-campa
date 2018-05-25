@@ -1,13 +1,11 @@
 <div class="home-container" >
-    <h3>THE MOST POPULAR VANS FOR YOUR TRAVEL EXPERIENCE</h3>
+    <h3>A SELECTION OF VANS BASED ON YOUR TRAVEL PREFERENCES</h3>
     <div class="row">
-      <% @vans.take(4).each do |van| %>
+      <% @vans.shuffle.take(4).each do |van| %>
         <div class="col-xs-12 col-sm-3">
           <%= render 'vans/card', van: van %>
         </div>
       <% end  %>
     </div>
 </div>
-
-
 
