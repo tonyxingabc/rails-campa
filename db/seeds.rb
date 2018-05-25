@@ -20,13 +20,18 @@ url1 = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527184918/jdgr1sy8ipn
 url2 = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527238281/fcuugizhjwtz7mqwp5h6.jpg"
 #profile pictures
 url3 = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527186297/zlkezooorwzs6mzuwopt.jpg"
+url4 = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527166343/hhiiiockgsi2hl04lt4u.jpg"
 
 u1 = User.new(
   {email: "lito@gmail.com", password:"1111111", name: "Lito", username: "Litotechie"}
   )
 u1.remote_photo_url = url3
 u1.save
-u2 = User.create({email: "tony@gmail.com", password:"1111111",name: "Tony", username: "tonyxingabc"})
+u2 = User.new(
+  {email: "tony@gmail.com", password:"1111111",name: "Tony", username: "tonyxingabc"}
+  )
+u2.remote_photo_url = url4
+u2.save
 u3 = User.create({email: "ferdi@gmail.com", password:"1111111",name: "Ferdi", username: "ferdi"})
 
 v1 = Van.new(
