@@ -28,6 +28,7 @@ url2 = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527238281/fcuugizhjwt
 url4 = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527254826/Retro-1967-VW-T2-Camper-Van-814626.jpg"
 url5 = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527255049/camperstory6full.jpg"
 #profile pictures
+url6 = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527166343/hhiiiockgsi2hl04lt4u.jpg"
 url3 = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527186297/zlkezooorwzs6mzuwopt.jpg"
 
 u1 = User.new(
@@ -35,7 +36,9 @@ u1 = User.new(
   )
 u1.remote_photo_url = url3
 u1.save
-u2 = User.create({email: "tony@gmail.com", password:"1111111",name: "Tony", username: "tonyxingabc"})
+u2 = User.new({email: "tony@gmail.com", password:"1111111",name: "Tony", username: "tonyxingabc"})
+u2.remote_photo_url = url6
+u2.save
 u3 = User.create({email: "ferdi@gmail.com", password:"1111111",name: "Ferdi", username: "ferdi"})
 
 v1 = Van.new(
