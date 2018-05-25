@@ -39,7 +39,7 @@ u2 = User.create({email: "tony@gmail.com", password:"1111111",name: "Tony", user
 u3 = User.create({email: "ferdi@gmail.com", password:"1111111",name: "Ferdi", username: "ferdi"})
 
 v1 = Van.new(
-  {user_id: u1.id, title: "Old Joe", description: "The most beautiful van in the world", cost_per_night: 70, max_guest: 2, transmission_type: "automatic", toilet: true, beds: 2, location: "Brussels", address: "Avenue Brugmann 28, Brussels"})
+  {user_id: u1.id, title: "Old Joe", description: "The most beautiful van in the world", cost_per_night: 70, max_guest: 2, transmission_type: "automatic", toilet: true, beds: 2, location: "Brussels", address: "Avenue Brugmann 28, Brussels"}
   )
 v1.remote_photo_url = url1
 v1.save
