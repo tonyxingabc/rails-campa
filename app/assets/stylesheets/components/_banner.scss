@@ -27,6 +27,16 @@
     margin-bottom: 50px;
 }
 
+.home-boarder {
+  border-top: 1px solid lightgray;
+  margin-top: 40px;
+  max-width: 80vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 120px;
+}
+
 .banner-content {
     display: flex;
     text-align: center;

@@ -10,6 +10,19 @@ function autocomplete() {
         }
       });
     }
+
+
+    var cityAddress = document.getElementById('city_address');
+
+    if (cityAddress) {
+      var autocomplete = new google.maps.places.Autocomplete(cityAddress, { types: [ 'geocode' ] });
+      google.maps.event.addDomListener(cityAddress, 'keydown', function(e) {
+        if (e.key === "Enter") {
+          e.preventDefault(); // Do not submit the form on Enter.
+        }
+      });
+    }
+
   });
 }
 
