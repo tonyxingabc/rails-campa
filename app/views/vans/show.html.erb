@@ -55,35 +55,25 @@
                   <span class="price-emphasis">€</span><span class="price-emphasis" data-id="averageRental"><%= @van.cost_per_night %></span> per day
                 </div>
               <!-- Section: Pricing Breakdown & Book Button -->
-                <form class="pricing-form ">
+                <%= simple_form_for [@van, @booking], class: 'pricing-form' do |f| %>
                   <fieldset class="col-xs-12">
                     <label>Pick up / Drop off</label>
                     <div class="input-wrapper input-underlined">
                       <i class="input-icon fa fa-calendar" aria-hidden="true"></i>
                       <div class="input-daterange input-group" id="datepicker">
-                        <input type="text" name="start" />
+                        <%= f.input :start_date, as: :string, input_html: {id: 'start-datepicker'} %>
                         <span>to</span>
-                        <input type="text" name="end" />
+                        <%= f.input :end_date, as: :string, input_html: {id: 'end-datepicker'} %>
                       </div>
                     </div>
+                      <input type="hidden" name="booking[cost]" id="cost-params">
                   </fieldset>
-
-                <fieldset class="col-xs-12">
-                  <label>Guests</label>
-                  <div class="input-wrapper input-underlined">
-                    <i class="input-icon fa fa-users" aria-hidden="true"></i>
-                    <!-- select box  -->
-                    <%= simple_form_for(@van) do |f| %>
-                      <%= f.input :max_guest, :collection => %w[1 2 3 4], label: false %>
-                    <% end %>
-                  </div>
-                </fieldset>
 
                 <div id="dates-available-wrapper">
                   <div class="col-xs-12">
                     <div class="pricing-row" data-price-row="rnt" style="">
                       <div style="float:left">
-                        <span data-price-title="rnt">€<span data-id="averageRental"><%= @van.cost_per_night %></span> x <span data-id="duration">7</span> day(s) <a data-toggle="collapse" data-target="#extra-info-prices"></a></span><a data-toggle="collapse" data-target="#extra-info-prices"><i class="fa fa-question-circle toggle-extra-info"></i></a>
+                        <span data-price-title="rnt">€<span data-id="averageRental"><%= @van.cost_per_night %></span> x <span data-id="duration">0</span> day(s) <a data-toggle="collapse" data-target="#extra-info-prices"></a></span><a data-toggle="collapse" data-target="#extra-info-prices"><i class="fa fa-question-circle toggle-extra-info"></i></a>
                         <div id="extra-info-prices" class="collapse extra-info">
                           <p data-price-breakdown="rnt"><p>Standard rate: $<%= @van.cost_per_night %> x 7 day(s)</p></p>
                           <p></p><p>Daily rates fluctuate based off seasonal availability.</p><p></p>
@@ -91,7 +81,7 @@
                       </div>
 
                       <div style="float: right">
-                        <span style="font-size:18px">€<span data-price-rowtotal="rnt"><%= @van.cost_per_night * 7 %></span></span>
+                        <span style="font-size:18px">€<span data-price-rowtotal="rnt">0</span></span>
                       </div>
                     </div>
                   </div>
@@ -102,20 +92,22 @@
                       <span><b>Total</b>(GST Inc)</span>
                     </div>
                   <div style="float: right">
-                    <span><span style="font-size:18px"><b>€<span data-price-rowtotal="total"><%= @van.cost_per_night * 7 * 1.2 %></span></b>
+                    <span><span style="font-size:18px"><b>€<span data-price-rowtotal="total">0</span></b>
                     </span></span></div>
                   </div>
                 </div>
 
                 <div class="col-xs-12">
                   <div class="btn-request-booking-wrapper">
-                    <div id="btn-request-booking" class="btn btn-primary btn-block btn-request-booking">Make Booking</div>
+                    <div id="btn-request-booking" class="btn btn-block btn-request-booking">
+                      <%= f.submit value: 'Make booking', input_html: {id: "btn-request-booking"} %>
+                    </div>
                   </div>
                 </div>
               </div>
-            </form>
               <!-- Section: Blank Space -->
 
+              <% end %>
               </div>
             </div>
           </div>        <!-- Listing-Pricing Ends-->

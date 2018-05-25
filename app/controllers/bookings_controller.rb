@@ -13,6 +13,7 @@ class BookingsController < ApplicationController
     authorize @booking
     @booking.user = current_user
     @booking.van = @van
+    @booking.status = 'pending'
     if @booking.save
       redirect_to pages_profile_path
     else
@@ -47,6 +48,9 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:user, :van, :status, :start_date, :end_date, :cost)
+    params_hash = params.require(:booking).permit(:user, :van, :status, :cost)
+    params_hash[:start_date] = Date.strptime(params[:booking][:start_date], '%m/%d/%Y')
+    params_hash[:end_date] = Date.strptime(params[:booking][:end_date], '%m/%d/%Y')
+    return params_hash
   end
 end
